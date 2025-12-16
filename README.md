@@ -13,7 +13,7 @@ This is a serverless URL shortener built using AWS Lambda, API Gateway, and Dyna
 - **DynamoDB**: Stores the mapping between short codes and long URLs.
 ## Setup
 Set Up AWS Resources
-# Create the DynamoDB Table
+### Create the DynamoDB Table
 
 Go to the AWS Management Console and open the DynamoDB service.
 
@@ -25,7 +25,7 @@ Set the partition key to shortCode (String).
 
 Leave other settings as default and create the table.
 
-# Deploy the Lambda Functions
+### Deploy the Lambda Functions
 
 Open the AWS Lambda console.
 
@@ -37,7 +37,7 @@ Create another Lambda function named redirect_url and upload the redirect_url/la
 
 Make sure both Lambda functions have the necessary IAM role permissions to access DynamoDB. You can attach the AmazonDynamoDBFullAccess policy for simplicity.
 
-# Set Up API Gateway
+### Set Up API Gateway
 
 Open the Amazon API Gateway console.
 
@@ -49,11 +49,11 @@ Create a {proxy+} resource to handle all other paths and set up a GET method tha
 
 Deploy your API and note the invoke URL.
 
-# Update Lambda Environment Variables (Optional)
+### Update Lambda Environment Variables (Optional)
 
 If you want to store the API URL or table name as environment variables in Lambda, you can do that in the Lambda console under the “Configuration” tab.
 
-# Test the Setup
+### Test the Setup
 
 Use a tool like Postman to send a POST request to your /shorten endpoint with a JSON body containing a longUrl.
 
